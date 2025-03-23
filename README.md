@@ -27,7 +27,7 @@ This project facilitates decentralized image upload and sharing on the blockchai
 
    ```bash
    # Navigate to the root directory
-   cd Decentralized File System
+   cd Decentralized File System Blockchain
    # Install hardhat dependencies
    npm install
    ```
