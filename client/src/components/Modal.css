@@ -6,17 +6,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .modalContainer {
   width: 500px;
-  height: 200px;
+  max-height: 80vh;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 25px;
+  overflow-y: auto;
 }
 
 .modalContainer {
@@ -26,6 +30,9 @@
 .title {
   display: inline-block;
   text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .titleCloseBtn {
@@ -47,6 +54,7 @@
   align-items: center;
   font-size: 1.7rem;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .modalContainer .footer {
@@ -54,6 +62,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
 }
 
 .modalContainer .footer button {
@@ -81,4 +90,70 @@
 
 input[type="text"]:focus {
   background-color: lightblue;
+}
+
+.sharing-mode {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.sharing-mode label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sharing-mode input {
+  margin-right: 5px;
+}
+
+.image-selection-container {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.image-selection-container h4 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.image-selection-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-selection-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.image-selection-item input {
+  margin-top: 5px;
+}
+
+#myForm {
+  margin: 15px 0;
+}
+
+#selectNumber {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }

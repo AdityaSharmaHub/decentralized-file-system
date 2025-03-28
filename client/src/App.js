@@ -11,7 +11,7 @@ function App() {
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-
+ 
   useEffect(() => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -28,8 +28,7 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
-        // console.log("Contract Address:", process.env.REACT_APP_CONTRACT_ADDRESS);
-
+        
         let contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
 
         const contract = new ethers.Contract(
@@ -54,7 +53,11 @@ function App() {
         </button>
       )}
       {modalOpen && (
-        <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
+        <Modal
+          setModalOpen={setModalOpen}
+          contract={contract}
+          account={account} // Add this line
+        />
       )}
 
       <div className="App">
